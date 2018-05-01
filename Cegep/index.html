@@ -1,0 +1,82 @@
+<!doctype html><html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>reveal.js    </title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/white.css">
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<!-- Printing and PDF exports -->
+<script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown>
+                <textarea data-template>
+                    ### Étude de la documentation des formations CIA-Techno du Centre d'action bénévole de Granby
+                    </textarea>
+                <section data-background-iframe="./pdf/1-originaux/Formation%20tablette%20CIA-%20TECHNO.pdf" data-background-interactive>
+                    </section>
+                <section data-background-iframe="./pdf/2-nouveaux/Formation%20tablette%20CIA-%20TECHNO-grosse-police.pdf" data-background-interactive>
+                    </section>
+                </section>
+            <section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### Table des matières
+                        - [Formation tablette](#/2)
+                        - [Nouveau](#/2/1)
+                        </textarea>
+                    </section>
+                </section>
+            <section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### Formation tablette
+                        [Original](#/3/1) - [Nouveau](#/3/2)
+                        </textarea>
+                    </section>
+                <section data-background-iframe="./pdf/1-originaux/Formation%20tablette%20CIA-%20TECHNO.pdf" data-background-interactive>
+                    </section>
+                <section data-background-iframe="./pdf/2-nouveaux/Formation%20tablette%20CIA-%20TECHNO-grosse-police.pdf" data-background-interactive>
+                    </section>
+                </section>
+            <section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### Réviser quatre nouveaux documents (#3)
+                        - [ ] Contenu formation courriels CIA -TECHNO.DOC - 326k (application/msword)
+                        - [ ] Contenu formation internet CIA -TECHNO.DOC -  562k (application/msword)
+                        - [ ] CIA-TECHNO formation de base 1.doc - 3.4M (application/msword)
+                        - [ ] CIA-TECHNO formation réseaux sociaux.doc - 6.1M (application/msword)
+                        </textarea>
+                    </section>
+                </section>
+            </div>
+        </div>
+    <script src="lib/js/head.min.js">    </script>
+    <script src="js/reveal.js">    </script>
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            // Display the page number of the current slide
+                slideNumber: true,
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+        </script>
+    </body>
+</html>
