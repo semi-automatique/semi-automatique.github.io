@@ -1,82 +1,315 @@
 <!doctype html><html><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>reveal.js    </title>
-<link rel="stylesheet" href="css/reveal.css">
-<link rel="stylesheet" href="css/theme/white.css">
-<!-- Theme used for syntax highlighting of code -->
-<link rel="stylesheet" href="lib/css/zenburn.css">
-<!-- Printing and PDF exports -->
-<script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
+<!-- Le head -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Réseaux - Modèles OSI et TCP</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
-            <section data-markdown>
-                <textarea data-template>
-                    ### Étude de la documentation des formations CIA-Techno du Centre d'action bénévole de Granby
-                    </textarea>
-                <section data-background-iframe="./pdf/1-originaux/Formation%20tablette%20CIA-%20TECHNO.pdf" data-background-interactive>
+            <!-- Page titre -->
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Réseaux - Modèles OSI et TCP
+                                
+                            Par : Guy Leblanc
+                                
+                            Jeudi 2018-05-03
+                                
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Objectifs de la présentation
+                            - Comprendre l'organisation de base d'un réseau
+                            - Comprendre minimalement OSI
+                            - Comprendre minimalement TCP/IP
+                            - Comparaison de OSI et TCP/IP
+                            </textarea>
+                        </section>
                     </section>
-                <section data-background-iframe="./pdf/2-nouveaux/Formation%20tablette%20CIA-%20TECHNO-grosse-police.pdf" data-background-interactive>
+            <!-- Les présentations -->
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Les présentations
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Je suis Guy Leblanc
+                                
+                            - Je suis beauceron d'origine
+                            - J'ai fait de la musique dans le métro
+                            - J'ai fait la garde en rouge avec le 22e régiment à la citadelle de Québec
+                            - Ma spécialité est la performance des systèmes informatiques
+                            - Et je fais une heure  d'auto formation par jour.
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Vie professionnelle
+                                
+                            - J'ai trente ans d'expérience en informatique
+                            - J'ai participé à toutes les étapes du cycle de vie du logiciel
+                            - J'ai travaillé dans le domaine de la recherche : Centre de recherche d'Hydro-Québec (IREQ), CRIM
+                            - Je travaille comme consultant depuis le début des années 90 - Plus de 100 projets dans des PME et grandes entreprises (Desjardins, Hydro-Québec, UdeS, ...)
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Formation
+                                
+                            - J'ai un diplôme de l'Université de Montréal en informatique
+                            - J'ai fait tous les cours pour une maîtrise en ergonomie du logiciel à la polytechnique
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Passe-temps
+                                
+                            - Je fais du sport (Marathon, duathlon, triathlon)
+                            - Je fais du bénévolat (Centre de bénévolat pour les personnes âgées, c'est récent)
+                            </textarea>
+                        </section>
+                    
                     </section>
-                </section>
-            <section>
-                <section data-markdown>
-                    <textarea data-template>
-                        ### Table des matières
-                        - [Formation tablette](#/2)
-                        - [Nouveau](#/2/1)
-                        </textarea>
+            <!-- Sujet le rythme -->
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Comment ça marche un réseau?
+                            - Recherche Google
+                            - Exemple de recherche : Rythme deux contre trois
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Exemple de recherche
+                            <img src="./images/01-chrome-demande-google.png"
+                                alt="Exemple de recherche : Rythme deux contre trois"
+                                width="80%" height="80%">
+                            </textarea>
+                        </section>
+                    
                     </section>
-                </section>
-            <section>
-                <section data-markdown>
-                    <textarea data-template>
-                        ### Formation tablette
-                        [Original](#/3/1) - [Nouveau](#/3/2)
-                        </textarea>
+            <!-- Vision simplifiée d'un réseau  -->
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Vision simplifiée d'un réseau
+                                
+                            - Avec l'exemple précédent, nous pouvons avoir une vision simplifiée d'un réseau.
+                            - Le réseau permet la communication entre les entités.
+                            - Navigateur Chrome <-- Réseau --> Serveur Google
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Un réseau c'est plus que ça (trois principes de base)
+                                
+                            - Une organisation en **couches indépendantes superposées** dont chaque niveau offre **un service** à sa couche supérieure. (Le QUOI)
+                            - Une utilisation de **protocoles de communication** entre entité de même couche de manière virtuelle. (Le comment connu uniquement de chaque couche spécifique)
+                            - Une **interface** entre chacune des couches permettant d'échanger des informations. (Le comment des échanges entre les couches)
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### La vision simplifiée n'avait qu'une seule couche
+                                
+                            - Cette couche était au niveau des applications
+                            - Navigateur Chrome <-- Réseau --> Serveur Google
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Les deux modèles de référence du jour
+                                
+                            - Le modèle OSI (Open Systems Interconnection)
+                            - Le modèle TCP/IP (Transport control protocol / Internet protocol)
+                            - Les modèles de référence sont comme les plans d'une maison.
+                            - Ce ne sont pas des réseaux comme tels.
+                            </textarea>
+                        </section>
+                    
                     </section>
-                <section data-background-iframe="./pdf/1-originaux/Formation%20tablette%20CIA-%20TECHNO.pdf" data-background-interactive>
+            <!-- Modèle OSI (Open Systems Interconnection)  -->
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Le modèle OSI (Open Systems Interconnection)
+                                
+                            - Il est le modèle de référence
+                            - Il est composé de 7 niveaux
+                            - Considéré comme complet il permet de mieux comprendre les réseaux informatiques
+                            - Il a montré certaines faiblesses quand on a mis au point les premiers protocoles de réseaux qui désiraient le respecter (Performance, Complexité).
+                            - C'est un modèle construit à partir d'une approche théorique.
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### OSI (Open Systems Interconnection)
+                            <a title="Par Offnfopt [Public domain ou CC0], de Wikimedia Commons"
+                                href="https://commons.wikimedia.org/wiki/File:OSI_Model_v1.svg">
+                                <img width="40%" alt="OSI Model v1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/OSI_Model_v1.svg/langfr-476px-OSI_Model_v1.svg.png">
+                                </a>
+                            [https://commons.wikimedia.org/wiki/File:OSI_Model_v1.svg](https://commons.wikimedia.org/wiki/File:OSI_Model_v1.svg)
+                            <!--
+                                ![Les couches de OSI](https://fr.wikipedia.org/wiki/Mod%C3%A8le_OSI#/media/File:OSI_Model_v1.svg)
+                                <img src="https://fr.wikipedia.org/wiki/Mod%C3%A8le_OSI#/media/File:OSI_Model_v1.svg"
+                                    alt="Les couches du modèle OSI (1 de 2)"
+                                    width="80%" height="80%">
+                                -->
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### OSI - Processus de transmission/réception
+                            <img src="https://user.oc-static.com/files/239001_240000/239082.png"
+                                alt="OSI - Processus de transmission/réception"
+                                width="70%" height="70%">
+                            </textarea>
+                        </section>
+                    
                     </section>
-                <section data-background-iframe="./pdf/2-nouveaux/Formation%20tablette%20CIA-%20TECHNO-grosse-police.pdf" data-background-interactive>
+            <!-- Modèle TCP/IP  -->
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### TCP/IP (Transport control protocol / Internet protocol)
+                                
+                            - Il est le modèle de l'Internet que nous connaissons
+                            - Il est composé de 4 niveaux
+                            - Considéré très imparfait du point de vue conceptuel
+                            - Lacunes découlant de son mode de construction
+                            - La place qu'il occupe démontre sa force (bonne performance, simple).
+                            - C'est un modèle construit sur l'expérience terrain (Il faut d'abord que ça marche, puis nous pourrons l'améliorer)
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Les couches du modèle TCP/IP (Transport control protocol / Internet protocol)
+                            <a title="Les couches du modèle TCP/IP"
+                                href="./images/TCP_encapsulation-fr.png">
+                                <img width="50%" alt="Les couches du modèle TCP/IP" src="./images/TCP_encapsulation-fr.png">
+                                </a>
+                            - [https://commons.wikimedia.org/wiki/File:UDP_encapsulation-fr.png?uselang=fr](https://commons.wikimedia.org/wiki/File:UDP_encapsulation-fr.png?uselang=fr)
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### TCP/IP - Processus de transmission/réception
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/IP_stack_connections.svg"
+                                alt="TCP/IP - Processus de transmission/réception"
+                                width="35%" height="35%">
+                            [https://upload.wikimedia.org/wikipedia/commons/c/c4/IP_stack_connections.svg](https://upload.wikimedia.org/wikipedia/commons/c/c4/IP_stack_connections.svg)
+                            <!-- TODO 4 niveau -->
+                            </textarea>
+                        </section>
+                    
                     </section>
-                </section>
-            <section>
-                <section data-markdown>
-                    <textarea data-template>
-                        ### Réviser quatre nouveaux documents (#3)
-                        - [ ] Contenu formation courriels CIA -TECHNO.DOC - 326k (application/msword)
-                        - [ ] Contenu formation internet CIA -TECHNO.DOC -  562k (application/msword)
-                        - [ ] CIA-TECHNO formation de base 1.doc - 3.4M (application/msword)
-                        - [ ] CIA-TECHNO formation réseaux sociaux.doc - 6.1M (application/msword)
-                        </textarea>
+            <!-- Comparaison des modèles OSI et TCP/IP  -->
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Comparaison des modèles OSI et TCP/IP
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Comparaison_des_mod%C3%A8les_OSI_et_TCP_IP.png"
+                                alt="Comparaison des modèles OSI et TCP/IP"
+                                width="35%" height="35%">
+                            - [https://fr.wikibooks.org/wiki/Les_r%C3%A9seaux_informatiques/Version_imprimable#/media/File:Comparaison_des_mod%C3%A8les_OSI_et_TCP_IP.png](https://fr.wikibooks.org/wiki/Les_r%C3%A9seaux_informatiques/Version_imprimable#/media/File:Comparaison_des_mod%C3%A8les_OSI_et_TCP_IP.png)
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Comparaison des modèles OSI et TCP/IP (1 de 2)
+                                
+                            - OSI a eu le bénéfice de bien établir les trois principes (Interface, Service, Protocoles).
+                            - TCP/IP les a respectés sans jamais clairement les distingués.
+                            - OSI ne spécifiait pas et ne favorise pas de protocoles particuliers.
+                            - TCP/IP à débuter par une définition et implémentation des protocoles pour finir par arriver au modèle.
+                            </textarea>
+                        </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Comparaison des modèles OSI et TCP/IP (2 de 2)
+                                
+                            - OSI a été conçu avec une approche du haut vers le bas.
+                            - TCP/IP a été conçu avec une approche du bas vers le haut.
+                            - OSI est un modèle offrant des modes communications avec ou sans connexion.
+                            - TCP/IP ne supporte que les communications sans connexion (ce qui ajoute du travail au niveau des applications).
+                            
+                            </textarea>
+                        </section>
                     </section>
-                </section>
+            
+            <!-- Références -->
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Références
+                                
+                            - [Réseaux / Andrew Tanenbaum, David Wetherall. - 5e édition. - Paris : Pearson Education France ; Paris, impr. 2011. - 1 vol. (XII-958 p.) : ill., couv. ill. en coul. ; 24 cm. - ISBN 978-2-7440-7521-6. 621.392 TAN](https://www.pearson.ch/download/media/9782744075216_SP_01.pdf)
+                            - [CS144 Introduction to Computer Networking Fall 2016 Stanford University](https://www.youtube.com/playlist?list=PLvFG2xYBrYAQCyz4Wx3NPoYJOFjvU7g2Z)
+                                
+                            - [Wikibooks : Les réseaux informatiques/Les modèles OSI et TCP](https://fr.wikibooks.org/wiki/Les_r%C3%A9seaux_informatiques/Les_mod%C3%A8les_OSI_et_TCP)
+                                
+                            - [Les réseaux de zéro](https://openclassrooms.com/courses/les-reseaux-de-zero)
+                                
+                            <!--
+                                - Réseaux, 5e édition – Andrew Tanenbaum, David Wetherall
+                                    [Table des matières](https://www.pearson.ch/download/media/9782744075216_TC.pdf),
+                                    [1. Introduction](https://www.pearson.ch/download/media/9782744075216_SP_01.pdf)
+                                    
+                                - [Wikipedia : Suite des protocoles Internet](https://fr.wikipedia.org/wiki/Suite_des_protocoles_Internet)
+                                    
+                                - [Réseaux informatiques, modèle OSI et protocole TCP/IP](http://info.arqendra.net/Files/_Rsx+OSI+TCPIP_cours.pdf)
+                                    
+                                - [Gestion de réseaux informatiques - description](http://cegepsherbrooke.qc.ca/fr/formation-continue/formation-pour-adultes/aec-temps-plein/gestion-de-reseaux-informatiques/gestion)
+                                    
+                                - [Introduction aux réseaux et Modèle  TCP/IP](http://w3.polytech.univ-montp2.fr/~karen.godary/Info_Indus/reseau/CoursRezo_Part1_Intro.pdf)
+                                - [1.Introduction - Modèle en couches - OSI TCP/IP
+](http://dept-info.labri.fr/~felix/Annee2009-10/S2/ASR2%20Reseaux/Cours1.pdf)
+                                    
+                                - [ASR3 Réseaux](http://dept-info.labri.fr/~felix/Annee2009-10/S3/ASR3-Reseau/1-Cours/S3-Cours1_OSI_TCPIP.pdf)
+                                    
+                                - [UdeS Plan de cours INF 744 : Réseautique et télématique 1](https://www.usherbrooke.ca/cefti/fileadmin/sites/cefti/documents/Plan_de_cours/PDC_INF744.pdf)
+                                    
+                                -->
+                            </textarea>
+                        </section>
+                    </section>
             </div>
         </div>
-    <script src="lib/js/head.min.js">    </script>
-    <script src="js/reveal.js">    </script>
-    <script>
-        // More info about config & dependencies:
-        // - https://github.com/hakimel/reveal.js#configuration
-        // - https://github.com/hakimel/reveal.js#dependencies
-        Reveal.initialize({
-            // Display the page number of the current slide
-                slideNumber: true,
-            dependencies: [
-                { src: 'plugin/markdown/marked.js' },
-                { src: 'plugin/markdown/markdown.js' },
-                { src: 'plugin/notes/notes.js', async: true },
-                { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-            ]
-        });
-        </script>
+    <!-- Script -->
+        <script src="lib/js/head.min.js">    </script>
+        <script src="js/reveal.js">    </script>
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                // Display the page number of the current slide
+                    slideNumber: true,
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+            </script>
     </body>
 </html>
